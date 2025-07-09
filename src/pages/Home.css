@@ -1,0 +1,96 @@
+.home {
+  width: 100%;
+  height: 100svh;
+  background-color: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  min-width: 600px;
+}
+
+.left-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 45px;
+  flex: 0.7;
+}
+
+@keyframes slideFade {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1.3;
+  animation: slideFade 1.5s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.circle {
+  width: 320px;
+  height: 320px;
+  background-color: #facc15;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: float 4s ease-in-out infinite;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.salam {
+  color: #facc15;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.name {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.bio {
+  color: #d1d5db;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.5;
+  min-height: 40px;
+}

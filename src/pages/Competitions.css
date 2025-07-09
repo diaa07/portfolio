@@ -1,0 +1,57 @@
+.comp-container {
+  background-color: #0f172a;
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.comp-title {
+  font-size: 2.5rem;
+  color: #e2e8f0;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.comp-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.comp-card {
+  background-color: #1e1e2f;
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.comp-card:hover {
+  transform: translateY(-5px);
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.comp-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #facc15;
+}
+
+.comp-loc,
+.comp-cat,
+.comp-ach,
+.comp-role {
+  font-size: 14px;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.comp-ach {
+  font-weight: 500;
+  color: #34d399;
+}
