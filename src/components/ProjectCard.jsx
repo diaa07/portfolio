@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
       transitionSpeed={200}
     >
       <div className="project-card">
-        <img src={project.img} alt="" loading="lazy" />
+        <img src={project.img} alt="project image" />
         <div className="lower-sec">
           <div className="project-name">{project.name}</div>
           <div className="skills-container">

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Typewriter from "typewriter-effect";
+import personal from "../assets/profile.png";
 
 export default function Home() {
   return (
@@ -8,11 +9,7 @@ export default function Home() {
       <div className="home-container">
         <div className="left-section">
           <div className="circle">
-            <img
-              src="/src/assets/profile.png"
-              alt="Diaa"
-              className="profile-image"
-            />
+            <img src={personal} alt="Diaa" className="profile-image" />
           </div>
         </div>
 

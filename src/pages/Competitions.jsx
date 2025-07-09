@@ -71,7 +71,7 @@ export default function Competitions() {
       <div className="comp-grid">
         {competitions.map((comp) => {
           return (
-            <div className="comp-card">
+            <div key={comp.id} className="comp-card">
               <h3 className="comp-name">{comp.name}</h3>
               <p className="comp-loc">{comp.loc}</p>
               {comp.cat && <p className="comp-cat"> {comp.cat}</p>}
