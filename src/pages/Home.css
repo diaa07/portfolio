@@ -13,6 +13,8 @@
   align-items: center;
   width: 80%;
   min-width: 600px;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .left-section {
@@ -20,17 +22,6 @@
   justify-content: flex-end;
   margin-right: 45px;
   flex: 0.7;
-}
-
-@keyframes slideFade {
-  from {
-    transform: translateX(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 .right-section {
@@ -42,6 +33,17 @@
   animation: slideFade 1.5s ease forwards;
   animation-delay: 0.2s;
   opacity: 0;
+}
+
+@keyframes slideFade {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes float {
@@ -93,4 +95,40 @@
   font-style: italic;
   line-height: 1.5;
   min-height: 40px;
+}
+
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+    min-width: auto;
+  }
+  .left-section {
+    margin-right: 0;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .right-section {
+    align-items: center;
+    text-align: center;
+    flex: unset;
+  }
+  .salam {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle {
+    width: 220px;
+    height: 220px;
+  }
+  .salam {
+    font-size: 36px;
+  }
+  .name {
+    font-size: 28px;
+  }
+  .bio {
+    font-size: 14px;
+  }
 }

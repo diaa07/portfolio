@@ -28,6 +28,7 @@
   justify-items: center;
   width: 100%;
   margin-bottom: 40px;
+  gap: 20px;
 }
 
 .head {
@@ -66,4 +67,15 @@
 .skill-label:hover {
   transform: scale(1.1);
   background-color: #fde68a;
+}
+
+@media (max-width: 768px) {
+  .lower-part {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .left-sec,
+  .right-sec {
+    width: 90%;
+  }
 }

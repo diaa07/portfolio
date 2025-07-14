@@ -1,5 +1,6 @@
 .project-card {
   width: 320px;
+  max-width: 100%;
   border: none;
   display: flex;
   flex-direction: column;
@@ -20,6 +21,7 @@
 .project-card img {
   width: 100%;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .project-name {
@@ -46,6 +48,7 @@
   font-size: 14px;
   color: #a0a0ff;
   transition: background 0.3s ease;
+  white-space: nowrap;
 }
 
 .skill-label:hover {
@@ -57,6 +60,7 @@
   justify-content: center;
   gap: 12px;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
 .links-container a {
@@ -65,7 +69,7 @@
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
   transform: translateY(0);
 }
 
@@ -82,4 +86,10 @@
 .links-container a:hover {
   opacity: 0.85;
   transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 90vw;
+  }
 }

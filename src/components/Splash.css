@@ -23,6 +23,9 @@
   overflow: hidden;
   border-right: 2px solid #facc15;
   animation: blink-caret 0.8s step-end infinite;
+  max-width: 90vw;
+  text-align: center;
+  word-break: break-word;
 }
 
 .underline-loader {
@@ -42,6 +45,7 @@
   animation: load-underline 2s ease-in-out infinite;
   border-radius: 2px;
 }
+
 @keyframes blink-caret {
   0%,
   100% {
