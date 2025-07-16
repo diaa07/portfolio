@@ -13,9 +13,29 @@ function App() {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
     if (!loading) {
-      setTimeout(() => setShowContent(true), 300);
+      setTimeout(() => {
+        scrollToTop();
+        setShowContent(true);
+      }, 300);
     }
+
+    window.addEventListener("beforeunload", () => {
+      window.scrollTo(0, 0);
+    });
+
+    return () => {
+      window.removeEventListener("beforeunload", () => {
+        window.scrollTo(0, 0);
+      });
+    };
   }, [loading]);
 
   return (

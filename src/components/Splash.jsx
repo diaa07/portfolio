@@ -32,8 +32,9 @@ export default function Splash({ onFinish }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      onFinish();
-    }, 3500);
+      document.querySelector(".splash").classList.add("hidden");
+      setTimeout(onFinish, 500);
+    }, 3000);
     return () => clearTimeout(timer);
   }, [onFinish]);
 

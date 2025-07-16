@@ -24,6 +24,11 @@
 .swiper-content {
   flex: 1;
   overflow: hidden;
+  width: 100%;
+}
+
+.swiper {
+  padding: 10px 0;
 }
 
 .comp-card {
@@ -37,6 +42,7 @@
   text-align: left;
   transition: all 0.3s ease;
   height: 100%;
+  margin: 0 auto;
 }
 
 .comp-card:hover {
@@ -131,5 +137,13 @@
   }
   .comp-container {
     padding: 40px 10px;
+  }
+  .comp-card {
+    width: 100%;
+    padding: 15px;
+  }
+  .swiper-slide {
+    width: 85% !important;
+    margin-right: 10px;
   }
 }

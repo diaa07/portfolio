@@ -86,16 +86,34 @@ export default function Competitions() {
         <div className="swiper-content">
           <Swiper
             loop={true}
+            loopAdditionalSlides={2}
             spaceBetween={20}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
+            onBeforeInit={(swiper) => {
+              swiper.params.loopFillGroupWithBlank = true;
+              swiper.params.watchSlidesVisibility = true;
+              swiper.params.watchSlidesProgress = true;
+            }}
             navigation={false}
             pagination={{ clickable: true }}
             modules={[Navigation, Pagination]}
             breakpoints={{
-              320: { slidesPerView: 1.1 },
-              600: { slidesPerView: 1.5 },
-              768: { slidesPerView: 2.2 },
-              1024: { slidesPerView: 3.2 },
+              320: {
+                slidesPerView: 1.1,
+                loopAdditionalSlides: 1,
+              },
+              600: {
+                slidesPerView: 1.5,
+                loopAdditionalSlides: 1,
+              },
+              768: {
+                slidesPerView: 2.2,
+                loopAdditionalSlides: 2,
+              },
+              1024: {
+                slidesPerView: 3.2,
+                loopAdditionalSlides: 3,
+              },
             }}
           >
             {competitions.map((comp) => (
