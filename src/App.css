@@ -53,3 +53,45 @@ button,
 .link-buttons a {
   cursor: pointer;
 }
+.swiper-nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.swiper-button {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.swiper-button:hover {
+  background: #333;
+}
+
+.swiper-pagination {
+  display: none !important;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-pagination {
+  display: none !important;
+}

@@ -6,7 +6,7 @@ import Projects from "./pages/Projects";
 import Competitions from "./pages/Competitions";
 import About from "./pages/About";
 import Splash from "./components/Splash";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 
 function App() {
   const [loading, setLoading] = useState(true);

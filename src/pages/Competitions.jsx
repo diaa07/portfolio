@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Competitions.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function Competitions() {
+  const swiperRef = useRef();
   const competitions = [
     {
       id: 0,
@@ -65,21 +70,54 @@ export default function Competitions() {
       role: "Competitior",
     },
   ];
+
   return (
     <div className="comp-container">
       <h1 className="comp-title">My Competitions</h1>
-      <div className="comp-grid">
-        {competitions.map((comp) => {
-          return (
-            <div key={comp.id} className="comp-card">
-              <h3 className="comp-name">{comp.name}</h3>
-              <p className="comp-loc">{comp.loc}</p>
-              {comp.cat && <p className="comp-cat"> {comp.cat}</p>}
-              {comp.ach && <p className="comp-ach">{comp.ach}</p>}
-              <p className="comp-role"> {comp.role}</p>
-            </div>
-          );
-        })}
+
+      <div className="swiper-wrapper">
+        <button
+          className="swiper-button prev"
+          onClick={() => swiperRef.current?.slidePrev()}
+          aria-label="Previous"
+        >
+          ◀
+        </button>
+
+        <div className="swiper-content">
+          <Swiper
+            spaceBetween={20}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            navigation={false}
+            modules={[Navigation]}
+            breakpoints={{
+              320: { slidesPerView: 1.1 },
+              600: { slidesPerView: 1.5 },
+              768: { slidesPerView: 2.2 },
+              1024: { slidesPerView: 3.2 },
+            }}
+          >
+            {competitions.map((comp) => (
+              <SwiperSlide key={comp.id}>
+                <div className="comp-card">
+                  <h3 className="comp-name">{comp.name}</h3>
+                  <p className="comp-loc">{comp.loc}</p>
+                  {comp.cat && <p className="comp-cat"> {comp.cat}</p>}
+                  {comp.ach && <p className="comp-ach">{comp.ach}</p>}
+                  <p className="comp-role"> {comp.role}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <button
+          className="swiper-button next"
+          onClick={() => swiperRef.current?.slideNext()}
+          aria-label="Next"
+        >
+          ▶
+        </button>
       </div>
     </div>
   );
