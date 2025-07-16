@@ -33,6 +33,14 @@ export default function Projects() {
       code: "https://github.com/diaa07/rock-paper-scissors-game",
       demo: "https://diaa07.github.io/rock-paper-scissors-game/",
     },
+    {
+      id: 4,
+      name: "AI image generator",
+      skills: ["React", "Imagine API", "responsive design"],
+      img: "https://i.ibb.co/JN800sT/Screenshot-2025-07-16-135320.png",
+      code: "https://github.com/diaa07/AI-image-generator",
+      demo: "https://diaa07.github.io/AI-image-generator/",
+    },
   ];
 
   return (
