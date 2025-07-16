@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Skills from "./pages/Skills";
@@ -10,12 +10,23 @@ import Navbar from "./components/NavBar";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    if (!loading) {
+      setTimeout(() => setShowContent(true), 300);
+    }
+  }, [loading]);
 
   return (
     <>
       {loading && <Splash onFinish={() => setLoading(false)} />}
       <Navbar />
-      <div className={`main-content ${loading ? "hidden" : "fade-in"}`}>
+      <div
+        className={`main-content ${loading ? "hidden" : "fade-in"} ${
+          showContent ? "show" : ""
+        }`}
+      >
         <div id="home">
           <Home />
         </div>

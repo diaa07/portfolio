@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0f172a;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
@@ -82,10 +83,12 @@ button,
 .swiper-slide {
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
 }
 
 .swiper {
   overflow: visible !important;
+  padding: 0 10px;
 }
 
 .swiper-slide {
@@ -94,4 +97,10 @@ button,
 
 .swiper-pagination {
   display: none !important;
+}
+
+@media (max-width: 480px) {
+  .swiper-slide {
+    padding: 0 5px 20px;
+  }
 }

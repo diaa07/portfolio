@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import "./Competitions.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function Competitions() {
   const swiperRef = useRef();
@@ -74,7 +75,6 @@ export default function Competitions() {
   return (
     <div className="comp-container">
       <h1 className="comp-title">My Competitions</h1>
-
       <div className="swiper-wrapper">
         <button
           className="swiper-button prev"
@@ -83,13 +83,14 @@ export default function Competitions() {
         >
           ◀
         </button>
-
         <div className="swiper-content">
           <Swiper
+            loop={true}
             spaceBetween={20}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             navigation={false}
-            modules={[Navigation]}
+            pagination={{ clickable: true }}
+            modules={[Navigation, Pagination]}
             breakpoints={{
               320: { slidesPerView: 1.1 },
               600: { slidesPerView: 1.5 },
@@ -110,7 +111,6 @@ export default function Competitions() {
             ))}
           </Swiper>
         </div>
-
         <button
           className="swiper-button next"
           onClick={() => swiperRef.current?.slideNext()}

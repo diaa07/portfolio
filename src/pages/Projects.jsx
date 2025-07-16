@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import ProjectCard from "../components/ProjectCard";
 import "./Projects.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -54,13 +54,14 @@ export default function Projects() {
         >
           ◀
         </button>
-
         <div className="swiper-content">
           <Swiper
+            loop={true} // حلقة لا نهائية
             spaceBetween={24}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             navigation={false}
-            modules={[Navigation]}
+            pagination={{ clickable: true }}
+            modules={[Navigation, Pagination]}
             breakpoints={{
               320: { slidesPerView: 1.1 },
               600: { slidesPerView: 1.3 },
@@ -76,7 +77,6 @@ export default function Projects() {
             ))}
           </Swiper>
         </div>
-
         <button
           className="swiper-button next"
           onClick={() => swiperRef.current?.slideNext()}

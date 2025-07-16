@@ -72,14 +72,24 @@
 
 @media (max-width: 768px) {
   .swiper-button {
-    display: none;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
   }
-
-  .swiper-wrapper {
-    gap: 0;
+  .swiper-button.prev {
+    left: 5px;
   }
+  .swiper-button.next {
+    right: 5px;
+  }
+}
 
-  .projects-swiper {
-    width: 100%;
+@media (max-width: 480px) {
+  .swiper-content {
+    padding: 0 5px;
+  }
+  .projects {
+    padding: 40px 10px;
   }
 }
