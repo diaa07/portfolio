@@ -17,7 +17,7 @@ export default function ProjectCard({ project }) {
         <div className="lower-sec">
           <div className="project-name">{project.name}</div>
           <div className="skills-container">
-            {project.Skills.map((skill) => {
+            {project.skills.map((skill) => {
               return (
                 <div key={skill} className="skill-label">
                   {skill}

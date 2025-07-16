@@ -12,7 +12,7 @@ export default function Projects() {
     {
       id: 1,
       name: "Movie app",
-      Skills: ["React", "JS", "Responsive Design", "TMDB API", "Color themes"],
+      skills: ["React", "JS", "Responsive Design", "TMDB API", "Color themes"],
       img: "https://i.ibb.co/DHbWPygf/Screenshot-2025-07-09-015406.png",
       code: "https://github.com/diaa07/movie-app",
       demo: "https://diaa07.github.io/movie-app/",
@@ -20,7 +20,7 @@ export default function Projects() {
     {
       id: 2,
       name: "Prayer Times App",
-      Skills: ["React", "JS", "Adhan API"],
+      skills: ["React", "JS", "Adhan API"],
       img: "https://i.ibb.co/dwj6jY15/Screenshot-2025-07-09-015913.png",
       code: "https://github.com/diaa07/prayer-times-app",
       demo: "https://diaa07.github.io/prayer-times-app/",
@@ -28,7 +28,7 @@ export default function Projects() {
     {
       id: 3,
       name: "Rock Paper Scissors",
-      Skills: ["React", "JS"],
+      skills: ["React", "JS"],
       img: "https://i.ibb.co/5xBW2cSg/Screenshot-2025-07-09-015727.png",
       code: "https://github.com/diaa07/rock-paper-scissors-game",
       demo: "https://diaa07.github.io/rock-paper-scissors-game/",
@@ -46,7 +46,6 @@ export default function Projects() {
   return (
     <div className="projects">
       <h1>My Projects</h1>
-
       <div className="swiper-wrapper">
         <button
           className="swiper-button prev"
