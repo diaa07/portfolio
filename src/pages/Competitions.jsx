@@ -1,13 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Competitions.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 export default function Competitions() {
-  const swiperRef = useRef();
   const competitions = [
     {
       id: 0,
@@ -71,71 +65,19 @@ export default function Competitions() {
       role: "Competitior",
     },
   ];
-
   return (
-    <div className="comp-container">
-      <h1 className="comp-title">My Competitions</h1>
-      <div className="swiper-wrapper">
-        <button
-          className="swiper-button prev"
-          onClick={() => swiperRef.current?.slidePrev()}
-          aria-label="Previous"
-        >
-          ◀
-        </button>
-        <div className="swiper-content">
-          <Swiper
-            loop={true}
-            loopAdditionalSlides={2}
-            spaceBetween={20}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            onBeforeInit={(swiper) => {
-              swiper.params.loopFillGroupWithBlank = true;
-              swiper.params.watchSlidesVisibility = true;
-              swiper.params.watchSlidesProgress = true;
-            }}
-            navigation={false}
-            pagination={{ clickable: true }}
-            modules={[Navigation, Pagination]}
-            breakpoints={{
-              320: {
-                slidesPerView: 1.1,
-                loopAdditionalSlides: 1,
-              },
-              600: {
-                slidesPerView: 1.5,
-                loopAdditionalSlides: 1,
-              },
-              768: {
-                slidesPerView: 2.2,
-                loopAdditionalSlides: 2,
-              },
-              1024: {
-                slidesPerView: 3.2,
-                loopAdditionalSlides: 3,
-              },
-            }}
-          >
-            {competitions.map((comp) => (
-              <SwiperSlide key={comp.id}>
-                <div className="comp-card">
-                  <h3 className="comp-name">{comp.name}</h3>
-                  <p className="comp-loc">{comp.loc}</p>
-                  {comp.cat && <p className="comp-cat"> {comp.cat}</p>}
-                  {comp.ach && <p className="comp-ach">{comp.ach}</p>}
-                  <p className="comp-role"> {comp.role}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-        <button
-          className="swiper-button next"
-          onClick={() => swiperRef.current?.slideNext()}
-          aria-label="Next"
-        >
-          ▶
-        </button>
+    <div className="comp-container" id="competitions">
+      <h1 className="comp-title">Problem Solving Achievements</h1>
+      <div className="comp-grid">
+        {competitions.map((comp) => (
+          <div key={comp.id} className="comp-card">
+            <h3 className="comp-name">{comp.name}</h3>
+            <p className="comp-loc">{comp.loc}</p>
+            {comp.cat && <p className="comp-cat"> {comp.cat}</p>}
+            {comp.ach && <p className="comp-ach">{comp.ach}</p>}
+            <p className="comp-role"> {comp.role}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,40 +1,35 @@
 .home {
   width: 100%;
-  height: 100svh;
-  background-color: #111827;
+  height: 100vh;
+  background-color: var(--primary-bg);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .home-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  min-width: 600px;
-  max-width: 100%;
+  width: 90%;
+  max-width: 1200px;
   flex-wrap: wrap;
 }
-
 .left-section {
   display: flex;
   justify-content: flex-end;
-  margin-right: 45px;
-  flex: 0.7;
+  margin-right: 60px;
+  flex: 1;
 }
-
 .right-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  flex: 1.3;
+  flex: 1;
   animation: slideFade 1.5s ease forwards;
   animation-delay: 0.2s;
   opacity: 0;
 }
-
 @keyframes slideFade {
   from {
     transform: translateX(40px);
@@ -45,7 +40,6 @@
     opacity: 1;
   }
 }
-
 @keyframes float {
   0%,
   100% {
@@ -55,48 +49,44 @@
     transform: translateY(-15px);
   }
 }
-
 .circle {
-  width: 320px;
-  height: 320px;
-  background-color: #facc15;
+  width: 360px;
+  height: 360px;
+  background-color: var(--accent-color);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   animation: float 4s ease-in-out infinite;
+  box-shadow: 0 0 40px var(--glow-color);
 }
-
 .profile-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
 .salam {
-  color: #facc15;
+  color: var(--accent-color);
   font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: right;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-align: left;
+  text-shadow: 0 0 10px var(--glow-color);
 }
-
 .name {
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 48px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
-
 .bio {
-  color: #d1d5db;
-  font-size: 16px;
-  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 20px;
+  font-style: normal;
   line-height: 1.5;
   min-height: 40px;
 }
-
 @media (max-width: 900px) {
   .home-container {
     flex-direction: column;
@@ -115,8 +105,11 @@
   .salam {
     text-align: center;
   }
+  .circle {
+    width: 250px;
+    height: 250px;
+  }
 }
-
 @media (max-width: 480px) {
   .circle {
     width: 220px;

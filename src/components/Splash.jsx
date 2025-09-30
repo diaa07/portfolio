@@ -1,7 +1,8 @@
+// [file name]: components/Splash.jsx
 import React, { useEffect, useState } from "react";
 import "./Splash.css";
 
-export default function Splash({ onFinish }) {
+export default function Splash({ className }) {
   const [text, setText] = useState("");
   const fullText = "<Hello world!/>";
   const [isDeleting, setIsDeleting] = useState(false);
@@ -28,20 +29,14 @@ export default function Splash({ onFinish }) {
       setIndex(0);
     }
     return () => clearTimeout(timeout);
-  }, [index, isDeleting]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      document.querySelector(".splash").classList.add("hidden");
-      setTimeout(onFinish, 500);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [onFinish]);
+  }, [index, isDeleting, fullText]);
 
   return (
-    <div className="splash">
-      <div className="splash-text">{text}</div>
-      <div className="underline-loader"></div>
+    <div className={`splash-screen ${className}`}>
+      <div className="splash-text">
+        {text}
+        <span className="caret">|</span>
+      </div>
     </div>
   );
 }

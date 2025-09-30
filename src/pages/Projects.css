@@ -1,94 +1,35 @@
 .projects {
-  background-color: #0f172a;
-  padding: 64px 16px;
+  background-color: var(--primary-bg);
+  padding: 80px 16px;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .projects h1 {
-  font-size: 2.5rem;
-  color: #e2e8f0;
-  margin-bottom: 40px;
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 60px;
   font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+  text-shadow: 0 0 5px var(--glow-color);
 }
-
-.swiper-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  width: 100%;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 20px;
+  justify-items: center;
 }
-
-.swiper-content {
-  flex: 1;
-  overflow: hidden;
-}
-
-.projects-swiper {
-  padding: 10px 0;
-}
-
-.swiper-button {
-  background: #1e1e2f;
-  color: #facc15;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid #facc15;
-  position: relative;
-}
-
-.swiper-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.swiper-button.prev::before {
-  content: "◀";
-}
-
-.swiper-button.next::before {
-  content: "▶";
-}
-
-.swiper-button:hover {
-  background: #facc15;
-  color: #1e1e2f;
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .swiper-button {
-    display: flex;
-    width: 30px;
-    height: 30px;
-    font-size: 0.8rem;
-  }
-  .swiper-button.prev {
-    left: 5px;
-  }
-  .swiper-button.next {
-    right: 5px;
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
-
 @media (max-width: 480px) {
-  .swiper-content {
-    padding: 0 5px;
-  }
   .projects {
     padding: 40px 10px;
   }

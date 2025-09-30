@@ -12,18 +12,18 @@ export default function Home() {
             <img src={personal} alt="Diaa" className="profile-image" />
           </div>
         </div>
-
         <div className="right-section">
-          <h1 className="salam">السلام عليكم</h1>
-          <h2 className="name">Diaa Aldin Drak Alsebai</h2>
+          <h1 className="salam">Hello, I'm Diaa!</h1>
+          <h2 className="name">Diaa Aldin Alsebai</h2>
           <div className="bio">
             {" "}
             <Typewriter
               options={{
                 strings: [
-                  "Programming lover",
-                  "inspired by tea ☕",
-                  "and built for greatness 🔥",
+                  "Frontend Developer (React)",
+                  "Figma to Code Implementation",
+                  "Problem Solving Specialist",
+                  "Building Modern UIs",
                 ],
                 autoStart: true,
                 loop: true,

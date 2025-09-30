@@ -1,11 +1,9 @@
 import React from "react";
 import "./About.css";
-
 export default function About() {
   return (
-    <div className="about-container">
+    <div className="about-container" id="about">
       <h1 className="about-title">More About Me</h1>
-
       <div className="about-grid">
         <div className="about-card">
           <h2 className="card-title">Hobbies</h2>
@@ -16,28 +14,19 @@ export default function About() {
             <li>Swimming</li>
           </ul>
         </div>
-
         <div className="about-card">
           <h2 className="card-title">Why Me?</h2>
           <ul className="list">
-            <li>Problem solver</li>
-            <li>Teamworker</li>
-            <li>Nonstop dreamer</li>
-            <li>Passionate</li>
+            <li>Strong Problem-Solving (Specialist in CP)</li>
+            <li>Team-Oriented & Good Communicator</li>
+            <li>Committed to Clean Code & Best Practices</li>
+            <li>Passionate Learner & Detail-Oriented</li>
           </ul>
         </div>
       </div>
-
       <div className="links-section">
-        <h2 className="section-title">My Accounts</h2>
+        <h2 className="section-title">My Links</h2>
         <div className="link-buttons">
-          <a
-            href="https://codeforces.com/profile/binLaggin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Codeforces ↗️
-          </a>
           <a
             href="https://github.com/diaa07"
             target="_blank"
@@ -46,7 +35,6 @@ export default function About() {
             GitHub ↗️
           </a>
         </div>
-
         <h2 className="section-title">Contact Me</h2>
         <div className="link-buttons">
           <a

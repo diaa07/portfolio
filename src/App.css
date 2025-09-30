@@ -1,23 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+:root {
+  --primary-bg: #0d1117;
+  --secondary-bg: #161b22;
+  --accent-color: #00dfff;
+  --glow-color: rgba(0, 223, 255, 0.6);
+  --text-primary: #ffffff;
+  --text-secondary: #8b949e;
+}
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 0;
-  background-color: #0f172a;
+  background-color: var(--primary-bg);
   overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-primary);
 }
 html {
   scroll-behavior: smooth;
 }
-
 .main-content.hidden {
   opacity: 0;
   pointer-events: none;
   padding-top: 70px;
 }
-
 @keyframes fadeInContent {
   from {
     opacity: 0;
@@ -28,22 +36,34 @@ html {
     transform: translateY(0);
   }
 }
-
 .main-content.fade-in {
   animation: fadeInContent 1s ease forwards;
 }
-
-section,
-.fade-in {
+.fade-in,
+.comp-card,
+.project-card,
+.about-card,
+.link-buttons a {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
-
-section.show,
-.fade-in.show {
+.fade-in.show,
+.comp-card.show,
+.project-card.show,
+.about-card.show,
+.link-buttons a.show {
   opacity: 1;
   transform: translateY(0);
+}
+.project-card:nth-child(2),
+.comp-card:nth-child(2),
+.about-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.project-card:nth-child(3),
+.comp-card:nth-child(3) {
+  transition-delay: 0.2s;
 }
 
 a,
@@ -53,54 +73,4 @@ button,
 .comp-card,
 .link-buttons a {
   cursor: pointer;
-}
-.swiper-nav-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.swiper-button {
-  background: #1a1a1a;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: background 0.3s ease;
-}
-
-.swiper-button:hover {
-  background: #333;
-}
-
-.swiper-pagination {
-  display: none !important;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-
-.swiper {
-  overflow: visible !important;
-  padding: 0 10px;
-}
-
-.swiper-slide {
-  height: auto !important;
-}
-
-.swiper-pagination {
-  display: none !important;
-}
-
-@media (max-width: 480px) {
-  .swiper-slide {
-    padding: 0 5px 20px;
-  }
 }
