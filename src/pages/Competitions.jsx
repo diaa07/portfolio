@@ -67,7 +67,7 @@ export default function Competitions() {
   ];
   return (
     <div className="comp-container" id="competitions">
-      <h1 className="comp-title">Problem Solving Achievements</h1>
+      <h1 className="comp-title">Achievements</h1>
       <div className="comp-grid">
         {competitions.map((comp) => (
           <div key={comp.id} className="comp-card">
