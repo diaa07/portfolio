@@ -3,7 +3,7 @@ import "./Splash.css";
 
 export default function Splash({ onFinish }) {
   const [text, setText] = useState("");
-  const fullText = "<get your tea ready/>";
+  const fullText = "<Hello world!/>";
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
 
