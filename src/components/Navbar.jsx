@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-logo" onClick={() => scrollTo("home")}>
-        Abo Mesbah
+        Diaa Aldin dev
       </div>
       <div
         className={`burger ${menuOpen ? "open" : ""}`}
